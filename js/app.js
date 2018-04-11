@@ -6,6 +6,7 @@ do {
 }
 while (!numCreditCard|| !/^[0-9]*$/.test(numCreditCard)); // Condicion de validacion de entrada de datos, se repetira mientras que sea un campo vacio,o si contiene caracteres diferentes de numeros.
   isValidCard(numCreditCard);
+  document.getElementById("numero").innerHTML = numCreditCard
 
   function isValidCard(num){
 
@@ -35,8 +36,8 @@ while (!numCreditCard|| !/^[0-9]*$/.test(numCreditCard)); // Condicion de valida
     numberToValidate += pairNumbers[j]; //Va sumando y almacendo cada digito contenido en el array pairNumbers
   }
   if(numberToValidate % 10 === 0){ // Deacuerdo a el algoritmo Luhn si el residuo de la suma de todos los números es igual a 0 entonces el numero es valido
-    return console.log("Valido");
+    return document.getElementById("resultado").innerHTML = "Valida";
   }else{
-    return console.log("Invalido");
+    return document.getElementById("resultado").innerHTML = "Invalida";
   }
 }
